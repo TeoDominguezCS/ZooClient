@@ -1,0 +1,26 @@
+<h1>Habitats</h1>
+<p>A list of all Habitats</p>
+@if (habitats) {
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Population</th>
+        <th>HabitatID</th>
+        <th>ZooID</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (habitat of habitats; track habitat.habitatId) {
+        <tr ngFor="let habitat of habitats">
+          <td>{{ habitat.name }}</td>
+          <td>{{ habitat.population}}</td>
+          <td>{{ habitat.habitatId }}</td>
+          <td>{{ habitat.zooId }}</td>
+        </tr>  
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}

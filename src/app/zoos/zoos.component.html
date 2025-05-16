@@ -1,0 +1,26 @@
+<h1>Zoos</h1>
+<p>Here's a list of Zoos</p>
+@if (zoos) {
+  <table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>State</th>
+        <th>Address</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (zoo of zoos; track zoo.zooId) {
+        <tr ngFor="let zoo of zooz">
+          <td>{{ zoo.name }}</td>
+          <td>{{ zoo.state}}</td>
+          <td>{{ zoo.address }}</td>
+          <td>{{ zoo.zooId }}</td>
+        </tr>  
+      }
+    </tbody>
+  </table>
+} @else {
+  <p><em>Loading...</em></p>
+}
